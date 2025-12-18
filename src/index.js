@@ -3,11 +3,24 @@
 import dotenv from"dotenv"
 import connectDB from "./db/indexdb.js";
 
-dotenv.config({
+dotenv.config({   //config activates the dotenv
     path:'./.env'
 })
 
 connectDB()
+//after connectDB suuceeds .then() runs
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`Server is running at port: ${process.env.PORT}`);
+        
+    })
+})
+//catch runs only when DB connection failed
+.catch((err) =>{
+    console.log("MONGO db  connection failed!!!",err);
+
+    
+})
 
 
 

@@ -8,9 +8,11 @@ const connectDB=async()=>{
         
     }catch(error){
         console.log("MONGODB connection error",error);
-        process.exit(1)
+        process.exit(1) //this kills the node js as if y=there is mongodb failure then backened file should not run at all its useless
         
     }
 }
 
 export default connectDB
+
+//mongoose hepls node js file to talk to mongodb

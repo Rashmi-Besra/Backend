@@ -1,15 +1,12 @@
-const asyncHandler=(requesthandler) =>{
-    (req,res,next)=>{
-        Promise.resolve(req,res,next)
-        .catch((err)=>next(err));
-    };
+const asyncHandler = (fn) => {
+  return (req, res, next) => {
+    Promise
+      .resolve(fn(req, res, next))
+      .catch(next);
+  };
 };
 
-
-//error classin nodejs
-
-export {asyncHandler};
-
+export { asyncHandler };
 
 
 

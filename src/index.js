@@ -2,6 +2,7 @@
 
 import dotenv from"dotenv"
 import connectDB from "./db/indexdb.js";
+import { app } from "./app.js";
 
 dotenv.config({   //config activates the dotenv
     path:'./.env'

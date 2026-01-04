@@ -72,7 +72,7 @@ userS.methods.generateAccessToken=function(){
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
-            expiresIn:process.env.ACCESS_TOKEN_EXPIRY
+            expiresIn:process.env.ACCESS_TOKEN_EXPIRY//short lived
         }
     )
 }
@@ -85,7 +85,7 @@ userS.methods.generateRefreshToken=function(){
             username:this.username,
             fullname:this.fullname,
         },
-        process.env.REFRESH_TOKEN_SECRET,
+        process.env.REFRESH_TOKEN_SECRET,// long lived
         {
             expiresIn:process.env.REFRESH_TOKEN_EXPIRY
         }

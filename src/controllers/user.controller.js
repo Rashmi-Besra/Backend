@@ -474,6 +474,7 @@ export {
     loggedoutUser,
     refreshAccessToken,
     getcurrentuser,
+    changeCurrentPassword,
     updateAccountdetails,
     updateuseravatar,
     updatecoverimage,
